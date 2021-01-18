@@ -1,6 +1,6 @@
 <section class = "heading">
     <span class = "page-title font-weight-bold font italic"> [{{title}}]</span>
-    <a routerLink='/actor-create'>
+    <a routerLink='/user-create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
 </section>
@@ -22,8 +22,8 @@
             <td>{{user.lastName + ", " + user.firstName}}</td>
             <td>{{user.phoneNumber}}</td>
             <td>{{user.email}}</td>
-            <td>{{user.isAdmin ? 'yes': 'no'}}</td>
-            <td>{{user.isReviewer ? 'yes': 'no'}}</td>
+            <td>{{user.admin ? 'yes': 'no'}}</td>
+            <td>{{user.reviewer ? 'yes': 'no'}}</td>
             <td>
                 <a routerLink='/user-detail/{{user.id}}'>
                     <img width='20' height='20' src='assets/details.png' title='User Details'></a>  | 

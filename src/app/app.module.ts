@@ -7,11 +7,13 @@ import { UserListComponent } from './feature/user/user-list/user-list.component'
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent
+    UserListComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,

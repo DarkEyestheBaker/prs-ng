@@ -1,7 +1,18 @@
+import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UserCreateComponent } from './feature/user/user-create/user-create.component';
+import { UserListComponent } from './feature/user/user-list/user-list.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: 'user-list', pathMatch: 'full'},
+  { path: 'user-list', component: UserListComponent},
+  { path: 'user-create', component: UserCreateComponent},
+
+  { path: '**', component: UserListComponent}
+
+];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

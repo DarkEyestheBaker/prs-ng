@@ -1,0 +1,70 @@
+<section class="heading">
+    <span class='component-title'>[{{title}}]</span>
+  </section>
+  <main class="single">
+    <table class="table table-sm">
+      <tr>
+        <td>
+            User Name:
+        </td>
+        <td>
+            <input [(ngModel)]="user.userName" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+          <td>
+          First Name:
+          </td>
+          <td>
+              <input [(ngModel)]="user.firstName" class="rounded" type="text">
+          </td>
+      </tr>
+      <tr>
+        <td>
+            Last Name:
+        </td>
+        <td>
+            <input [(ngModel)]="user.lastName" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            Phone Number:
+        </td>
+        <td>
+            <input [(ngModel)]="user.phoneNumber" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            Email:
+        </td>
+        <td>
+            <input [(ngModel)]="user.email" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <label for='Admin'>
+                Admin:
+            </label> 
+        </td>
+        <td>
+            <input [(ngModel)]="user.admin" id='Admin' class="rounded" type="checkbox">
+        </td>
+      </tr> <tr>
+        <td>
+            <label for ="Reviewer">
+                is Reviewer:
+                </label>    
+        </td>
+        <td>
+            <input [(ngModel)]="user.reviewer" id = 'Reviewer' class="rounded" type="checkbox">
+        </td>
+      </tr>
+    </table>
+  </main>
+  <span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span> |
+  <!--
+  <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Back</button></span>
+-->
