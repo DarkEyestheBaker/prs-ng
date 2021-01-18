@@ -19,13 +19,13 @@ export class UserCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 save() {
-    //save the actor to the DB
+    //save the user to the DB
     this.userSvc.create(this.user).subscribe(
       resp => {
         this.user = resp as User;
         console.log('User created', this.user);
         
-        //forward to actor list component
+        //forward to user list component
         this.router.navigateByUrl("/user-list");
       },
       err => {
