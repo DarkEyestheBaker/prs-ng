@@ -6,8 +6,8 @@ export class User {
     lastName: string;
     phoneNumber: string;
     email: string;
-    isAdmin: boolean;
-    isReviewer: boolean;
+    admin: boolean;
+    reviewer: boolean;
 
 constructor (id: number = 0, 
             userName: string = '',
@@ -26,7 +26,7 @@ constructor (id: number = 0,
             this.lastName=lastName;
             this.phoneNumber=phoneNumber;
             this.email=email;
-            this.isAdmin=isAdmin;
-            this.isReviewer=isReviewer}
+            this.admin=isAdmin;
+            this.reviewer=isReviewer}
 
         }
