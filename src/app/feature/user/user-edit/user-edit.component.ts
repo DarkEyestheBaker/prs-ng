@@ -14,13 +14,14 @@ export class UserEditComponent implements OnInit {
   userID: number = 0;
   submitBtnTitle = "Save";
 
-  constructor(private userSvc: UserService
-              private router: Router
+  constructor(private userSvc: UserService,
+              private router: Router,
               private route: ActivatedRoute() {
                 
-              }) { }
+              }
 
   ngOnInit(): void {
+
     // get the ID from the DB
     this.route.params.subscribe(
       parms => {
