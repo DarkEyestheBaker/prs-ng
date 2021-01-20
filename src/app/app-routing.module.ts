@@ -6,6 +6,7 @@ import { UserCreateComponent } from './feature/user/user-create/user-create.comp
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserListComponent } from './feature/user/user-list/user-list.component';
 import { UserLoginComponent } from './feature/user-login/user-login.component';
+import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'user-list', pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'user-create', component: UserCreateComponent},
   { path: 'user-detail/:id', component: UserDetailComponent},
   { path: 'user-login', component: UserLoginComponent},
+  { path: 'user-edit', component: UserEditComponent},
 
   { path: '**', component: UserListComponent}
 ];
