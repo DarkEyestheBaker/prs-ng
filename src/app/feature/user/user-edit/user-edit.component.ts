@@ -16,7 +16,7 @@ export class UserEditComponent implements OnInit {
 
   constructor(private userSvc: UserService,
               private router: Router,
-              private route: ActivatedRoute() {
+              private route: ActivatedRoute) {
                 
               }
 
@@ -29,11 +29,11 @@ export class UserEditComponent implements OnInit {
         console.log(this.userID);
       }
     );
-    // get actor by ID 
+    // get user by ID 
     this.userSvc.getById(this.userID).subscribe(
       resp => {
         this.user = resp as User;
-        console.log('Actor', this.actor);
+        console.log('User', this.user);
       },
       err => {
         console.log(err);
