@@ -12,6 +12,7 @@ import { UserCreateComponent } from './feature/user/user-create/user-create.comp
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
 import { UserLoginComponent } from './feature/user-login/user-login.component';
+import { MenuComponent } from './core/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserLoginComponent } from './feature/user-login/user-login.component';
     UserCreateComponent,
     UserDetailComponent,
     UserEditComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

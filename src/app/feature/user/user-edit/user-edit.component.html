@@ -1,28 +1,29 @@
 <div class="component">
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{title}}</span>
-        <span>&nbsp;<a routerLink="/user-detail">Return to List</a></span>
+        <span>&nbsp;<a routerLink="/user-edit">Return to List</a></span>
     </section>
-    <main *ngIf = 'user' class="single">
+    <main *ngIf='user' class="single">
         <table class="table table-sm table-striped">
             <tr>
                 <td>ID</td>
                 <td>{{user.id}}</td>
             </tr>
-            <tr><td>
-                First Name:
-            </td>
-            <td>
-                <input [(ngModel)]="user.firstName" class="rounded" type="text">
-            </td>
-          </tr>
-          <tr>
-            <td>
-                Last Name:
-            </td>
-            <td>
-                <input [(ngModel)]="user.lastName" class="rounded" type="text">
-            </td>
+            <tr>
+                <td>
+                    First Name:
+                </td>
+                <td>
+                    <input [(ngModel)]="user.firstName" class="rounded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last Name:
+                </td>
+                <td>
+                    <input [(ngModel)]="user.lastName" class="rounded" type="text">
+                </td>
             <tr>
                 <td>
                     Phone Number:
@@ -30,38 +31,39 @@
                 <td>
                     <input [(ngModel)]="user.phoneNumber" class="rounded" type="text">
                 </td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <td>
                     Email:
                 </td>
                 <td>
                     <input [(ngModel)]="user.email" class="rounded" type="text">
                 </td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <td>
                     <label for='Admin'>
                         is Admin:
-                    </label> 
+                    </label>
                 </td>
                 <td>
                     <input [(ngModel)]="user.admin" id='Admin' class="rounded" type="text">
                 </td>
-              </tr> <tr>
+            </tr>
+            <tr>
                 <td>
-                    <label for ="Reviewer">
+                    <label for="Reviewer">
                         is Reviewer:
-                        </label>    
+                    </label>
                 </td>
                 <td>
-                    <input [(ngModel)]="user.reviewer" id = 'Reviewer' class="rounded" type="text">
+                    <input [(ngModel)]="user.reviewer" id='Reviewer' class="rounded" type="text">
                 </td>
-              </tr>
-            </table>
-          </main>
+            </tr>
+        </table>
+    </main>
     <span>
-
-        span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span> |
+        <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
+    </span> |
 
 </div>
