@@ -5,7 +5,7 @@ import { VendorService } from 'src/app/service/vendor.service';
 
 @Component({
   selector: 'app-vendor-create',
-  templateUrl: './vendor-maint-shared/vendor-maint.component.html',
+  templateUrl: 'src/app/feature/vendor/vendor-maint-shared/vendor-maint.component.html',
   styleUrls: ['./vendor-create.component.css']
 })
 export class VendorCreateComponent implements OnInit {
