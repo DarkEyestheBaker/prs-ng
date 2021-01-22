@@ -12,23 +12,23 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
 
 import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
- import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
-// import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
+import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
+import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'user-login', pathMatch: 'full'},
-  { path: 'user-list', component: UserListComponent},
-  { path: 'user-create', component: UserCreateComponent},
-  { path: 'user-detail/:id', component: UserDetailComponent},
-  { path: 'user-login', component: UserLoginComponent},
-  { path: 'user-edit/:id', component: UserEditComponent},
+  { path: '', redirectTo: 'user-login', pathMatch: 'full' },
+  { path: 'user-list', component: UserListComponent },
+  { path: 'user-create', component: UserCreateComponent },
+  { path: 'user-detail/:id', component: UserDetailComponent },
+  { path: 'user-login', component: UserLoginComponent },
+  { path: 'user-edit/:id', component: UserEditComponent },
 
-  { path: 'vendor-list', component: VendorListComponent},
-  { path: 'vendor-create', component: VendorCreateComponent},
-  { path: 'vendor-detail/:id', component: VendorDetailComponent},
-  // { path: 'vendor-edit/:id', component: VendorEditComponent},
+  { path: 'vendor-list', component: VendorListComponent },
+  { path: 'vendor-create', component: VendorCreateComponent },
+  { path: 'vendor-detail/:id', component: VendorDetailComponent },
+  { path: 'vendor-edit/:id', component: VendorEditComponent },
 
-  { path: '**', component: UserListComponent}
+  { path: '**', component: UserListComponent }
 ];
 
 @NgModule({

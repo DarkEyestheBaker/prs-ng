@@ -4,8 +4,8 @@
         <span class="page-title font-weight-bold font-italic">{{title}}</span>
         <span>&nbsp;<a routerLink="/vendor-list">Return to List</a></span>
     </section>
-    <main *ngIf = 'vendor' class="single">
-        <table class="table table-sm table-striped">
+    <main class="single">
+        <table *ngIf = 'vendor' class="table table-sm table-striped">
             <tr>
                 <td>ID</td>
                 <td>{{vendor.id}}</td>
@@ -85,7 +85,7 @@
     </main>
     <span>
 
-        <span><button (click)="save()" class="btn btn-sm btn-danger">{{submitBtnTitle}}</button></span>
+        <button (click)="save()" class="btn btn-sm btn-danger">{{submitBtnTitle}}</button>
 
     </span>
 </div>

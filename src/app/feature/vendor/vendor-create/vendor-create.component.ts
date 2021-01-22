@@ -5,7 +5,7 @@ import { VendorService } from 'src/app/service/vendor.service';
 
 @Component({
   selector: 'app-vendor-create',
-  templateUrl: 'src/app/feature/vendor/vendor-maint-shared/vendor-maint.component.html',
+  templateUrl: '../vendor-maint-shared/vendor-maint.component.html',
   styleUrls: ['./vendor-create.component.css']
 })
 export class VendorCreateComponent implements OnInit {
@@ -14,7 +14,7 @@ export class VendorCreateComponent implements OnInit {
   submitBtnTitle = "Create";
 
   constructor(private vendorSvc: VendorService,
-              private router: Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
   }
