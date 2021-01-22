@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -14,7 +12,12 @@ import { UserEditComponent } from './feature/user/user-edit/user-edit.component'
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
 import { MenuComponent } from './core/menu/menu.component';
+
 import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
+import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
+import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
+
+
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.co
     UserEditComponent,
     UserLoginComponent,
     MenuComponent,
-    VendorListComponent
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorCreateComponent,
+  
   ],
   imports: [
     BrowserModule,

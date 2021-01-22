@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Vendor } from '.src/app/model/vendor.class';
+import { Vendor } from '../model/vendor.class'; 
 
 const URL = 'http://localhost:8080/vendors';
 
