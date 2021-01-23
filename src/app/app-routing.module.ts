@@ -1,5 +1,4 @@
-import { componentFactoryName } from '@angular/compiler';
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined.component';
 
@@ -17,6 +16,7 @@ import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.co
 
 import { ProductListComponent } from './feature/Product/product-list/product-list.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
+import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'user-login', pathMatch: 'full' },
@@ -33,6 +33,7 @@ const routes: Routes = [
 
   { path: 'product-list', component: ProductListComponent},
   { path: 'product-create', component: ProductCreateComponent}, 
+  { path: 'product-edit', component: ProductEditComponent},
 
   { path: '**', component: NoComponentDefinedComponent }
 ];
