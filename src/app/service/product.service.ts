@@ -29,7 +29,7 @@ export class ProductService {
     return this.http.get(URL + '/' + id) as Observable<Product>;
   }
   //update vendor
-  update(vendor: Product): Observable<Product> {
+  update(product: Product): Observable<Product> {
     return this.http.put(URL + '/', product) as Observable<Product>;
   }
   //delete vendor by ID

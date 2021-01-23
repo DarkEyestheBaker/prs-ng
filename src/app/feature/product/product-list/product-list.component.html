@@ -9,6 +9,7 @@
     <thead>
         <tr>
             <th>ID</th>
+            <th>Vendor ID</th>
             <th>Part Number </th>
             <th>Name</th>
             <th>Price</th>
@@ -19,7 +20,9 @@
     </thead>
     <tbody>
         <tr *ngFor='let product of products'>
-            <td>{{product.id}}</td>        
+            <td>{{product.id}}</td>       
+            <td>{{product.vendor.vendorID}}</td>
+            <td>{{product.vendorName</td>
             <td>{{product.partNumber}}</td>
             <td>{{product.name}}</td>
             <td>{{product.price}}</td>
