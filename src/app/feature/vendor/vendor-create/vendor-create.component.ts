@@ -13,8 +13,7 @@ export class VendorCreateComponent implements OnInit {
   vendor: Vendor = new Vendor();
   submitBtnTitle = "Create";
 
-  constructor(private vendorSvc: VendorService,
-    private router: Router) { }
+  constructor(private vendorSvc: VendorService, private router: Router) { }
 
   ngOnInit(): void {
   }

@@ -1,0 +1,62 @@
+<app-menu></app-menu>
+<div class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span>&nbsp;<a routerLink="/product-list">Return to List</a></span>
+    </section>
+    <main class="single">
+        <table *ngIf = 'product' class="table table-sm table-striped">
+            <tr>
+                <td>ID</td>
+                <td>{{product.id}}</td>
+            </tr>
+
+            <tr> 
+                <td>Part Number:</td>             
+            <td>
+                <input [(ngModel)]="product.partNumber" class="rounded" type="text">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+                Name:
+            </td>
+            <td>
+                <input [(ngModel)]="product.name" class="rounded" type="text">
+            </td>
+            </tr>   
+
+        <tr>
+          <td>
+              Price:
+          </td>
+          <td>
+              <input [(ngModel)]="product.price" class="rounded" type="text">
+          </td>
+          </tr>   
+
+        <tr>
+          <td>
+              Unit:
+          </td>
+          <td>
+              <input [(ngModel)]="product.unit" class="rounded" type="text">
+          </td>
+          </tr>   
+ 
+        <tr>
+          <td>
+              photoPath:
+          </td>
+          <td>
+              <input [(ngModel)]="product.photoPath" class="rounded" type="text">
+          </td>
+          </tr>   
+
+        </table>
+    </main>
+    <span>
+        <button (click)="save()" class="btn btn-sm btn-danger">{{submitBtnTitle}}</button>
+    </span>
+</div>
