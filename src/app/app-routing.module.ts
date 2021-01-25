@@ -16,9 +16,11 @@ import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.co
 
 import { ProductListComponent } from './feature/Product/product-list/product-list.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
+import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 
 import { RequestListComponent } from './feature/request/request-list/request-list.component';
+import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'user-login', pathMatch: 'full' },
@@ -35,9 +37,11 @@ const routes: Routes = [
 
   { path: 'product-list', component: ProductListComponent},
   { path: 'product-create', component: ProductCreateComponent}, 
-  { path: 'product-edit', component: ProductEditComponent},
+  { path: 'product-edit/:id', component: ProductEditComponent},
+  { path: 'product-detail/:id', component: ProductDetailComponent},
 
   { path: 'request-list', component: RequestListComponent},
+  { path: 'request-create', component: RequestCreateComponent},
 
   { path: '**', component: NoComponentDefinedComponent }
 ];
