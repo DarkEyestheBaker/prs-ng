@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { User } from 'src/app/model/user.class';
 import { UserService } from 'src/app/service/user.service';
 
@@ -25,7 +24,7 @@ export class UserLoginComponent implements OnInit {
     this.userSvc.login(this.user).subscribe(
       resp => {
         if (resp == null) {
-          this.msg = "Invalid username or password";
+          this.msg = "Invalid username or password.";
         }
         else {
           this.user = resp as User;
