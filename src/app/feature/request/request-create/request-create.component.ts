@@ -3,10 +3,11 @@ import { Router } from '@angular/router';
 import { Request } from 'src/app/model/request.class';
 import { RequestService } from 'src/app/service/request.service';
 import { SystemService } from 'src/app/service/system.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-request-create',
-  templateUrl: './request-create.component.html',
+  templateUrl: '../request-maint-shared/request-maint-shared.component.html',
   styleUrls: ['./request-create.component.css']
 })
 
@@ -18,6 +19,7 @@ export class RequestCreateComponent implements OnInit {
 
   constructor(private requestSvc: RequestService,
               private sysSvc: SystemService,
+              private loc: Location,
               private router: Router) {}
 
   ngOnInit(): void {}
@@ -39,7 +41,9 @@ export class RequestCreateComponent implements OnInit {
         }
       );
     }
-  
+    backClicked() {
+      this.loc.back();
+    }  
   }
 
 
