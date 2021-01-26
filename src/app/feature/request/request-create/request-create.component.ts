@@ -7,13 +7,13 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-request-create',
-  templateUrl: '../request-maint-shared/request-maint-shared.component.html',
+  templateUrl: './request-create.component.html',
   styleUrls: ['./request-create.component.css']
 })
 
 export class RequestCreateComponent implements OnInit {
   title = "Create Request";
-  submitBtnTitle = "Create";
+  submitBtnTitle = "Save Request";
   request: Request = new Request();
 
 

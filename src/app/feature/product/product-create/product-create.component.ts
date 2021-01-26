@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/model/product.class';
-import { Vendor } from 'src/app/model/vendor.class';
 import { ProductService } from 'src/app/service/product.service';
+import { Vendor } from 'src/app/model/vendor.class';
 import { VendorService } from 'src/app/service/vendor.service';
 
 @Component({
