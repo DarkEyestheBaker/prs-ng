@@ -18,19 +18,19 @@ export class RequestService {
     console.log("requestSvc.getAll()..." + URL);
     return this.http.get(URL + '/') as Observable<Request[]>;
   }
-  //create/add vendor
+  //create/add request
   create(request: Request): Observable<Request> {
     return this.http.post(URL + '/', request) as Observable<Request>;
   }
-  //get vendor by ID
+  //get request by ID
   getById(id): Observable<Request> {
     return this.http.get(URL + '/' + id) as Observable<Request>;
   }
-  //update vendor
+  //update request
   update(request: Request): Observable<Request> {
     return this.http.put(URL + '/', request) as Observable<Request>;
   }
-  //delete vendor by ID
+  //delete request by ID
   delete(id): Observable<Request> {
     return this.http.delete(URL + '/' + id) as Observable<Request>;
   }

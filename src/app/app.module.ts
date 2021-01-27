@@ -29,7 +29,8 @@ import { RequestListComponent } from './feature/request/request-list/request-lis
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
-import { LineItemListComponent } from './feature/lineItem/line-item-list/line-item-list.component';
+import { LineItemListComponent } from './feature/lineItem/lineItem-list/lineItem-list.component';
+import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { LineItemListComponent } from './feature/lineItem/line-item-list/line-it
     RequestEditComponent,
     RequestDetailComponent,
     LineItemListComponent,
+    RequestApproveComponent,
   
   ],
   imports: [
