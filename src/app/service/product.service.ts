@@ -15,24 +15,24 @@ export class ProductService {
 
     //service functions
 
-  //get All Vendors
+  //get All Products
   getAll(): Observable<Product[]> {
     console.log("productSvc.getAll()..." + URL);
     return this.http.get(URL + '/') as Observable<Product[]>;
   }
-  //create/add vendor
+  //create/add product
   create(product: Product): Observable<Product> {
     return this.http.post(URL + '/', product) as Observable<Product>;
   }
-  //get vendor by ID
+  //get product by ID
   getById(id): Observable<Product> {
     return this.http.get(URL + '/' + id) as Observable<Product>;
   }
-  //update vendor
+  //update product
   update(product: Product): Observable<Product> {
     return this.http.put(URL + '/', product) as Observable<Product>;
   }
-  //delete vendor by ID
+  //delete product by ID
   delete(id): Observable<Product> {
     return this.http.delete(URL + '/' + id) as Observable<Product>;
   }

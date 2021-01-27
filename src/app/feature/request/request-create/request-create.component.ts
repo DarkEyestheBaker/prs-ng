@@ -4,6 +4,7 @@ import { Request } from 'src/app/model/request.class';
 import { RequestService } from 'src/app/service/request.service';
 import { SystemService } from 'src/app/service/system.service';
 import { Location } from '@angular/common';
+import { User } from 'src/app/model/user.class';
 
 @Component({
   selector: 'app-request-create',
@@ -15,35 +16,37 @@ export class RequestCreateComponent implements OnInit {
   title = "Create Request";
   submitBtnTitle = "Save Request";
   request: Request = new Request();
+  user: User = new User();
 
 
   constructor(private requestSvc: RequestService,
-              private sysSvc: SystemService,
-              private loc: Location,
-              private router: Router) {}
+    private sysSvc: SystemService,
+    private loc: Location,
+    private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {this.user=this.sysSvc.loggedInUser}
 
-    save() {
-      // Set the request user to the current user
-      this.request.user = this.sysSvc.loggedInUser;
-      
-      // save the request to the database
-      this.requestSvc.create(this.request).subscribe(
-        resp => {
-          this.request = resp as Request;
-          console.log("Request created", this.request);
-          // forward to the request list component
-          this.router.navigateByUrl("/request-list");
-        },
-        err => {
-          console.log(err);
-        }
-      );
-    }
-    backClicked() {
-      this.loc.back();
-    }  
+  save() {
+    // Set the request user to the current user
+    this.request.user = this.sysSvc.loggedInUser;
+
+    // save the request to the database
+    this.requestSvc.create(this.request).subscribe(
+      resp => {
+        this.request = resp as Request;
+        console.log("Request created", this.request);
+
+        // forward to the request list component
+        this.router.navigateByUrl("/request-list");
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
+  backClicked() {
+    this.loc.back();
+  }
+}
 
 

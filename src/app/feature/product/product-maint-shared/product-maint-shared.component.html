@@ -2,17 +2,20 @@
 <div class="component">
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{title}}</span>
-        <span>&nbsp;<a routerLink="/product-list">Return to List</a></span>
+        <span>&nbsp;<a routerLink="/product-list">  Return to List</a></span>
     </section>
     <main class="single">
         <table *ngIf = 'product' class="table table-sm table-striped">
             <tr>
-                <tr>ID</tr>
+                <tr>
+                    <td>ID</td>
+                    <td>{{product.vendor.vendorId}}</td>
+                </tr>
                 <td>
                     Vendor:
                 </td>
                 <td>
-                    <select [(ngModel)]="product.vendor" class="rounded">
+                    <select [(ngModel)]="product.vendor.name" class="rounded">
                       <option *ngFor='let vendor of vendors' [ngValue]='vendor'>{{vendor.name}}</option>
                     </select>
                 </td>

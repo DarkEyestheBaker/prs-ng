@@ -13,6 +13,7 @@
             <th>Status</th>
             <th>Total</th>
             <th>Date Submitted</th>
+            <th>Action</th>
             
         </tr>
     </thead>
@@ -25,7 +26,7 @@
             <td>{{request.submittedDate}}</td>
             <td>
                 <a routerLink='/request-detail/{{request.id}}'>
-                    <img width='20' height='20' src='assets/details.png' title='request Details'></a>  | 
+                    <img width='20' height='20' src='assets/details.png' title='request Details'></a>    |   
                     <a routerLink='/request-edit/{{request.id}}'>
                     <img width='20' height='20' src='assets/pencil-icon.png' title='request Edit'>
                 </a>

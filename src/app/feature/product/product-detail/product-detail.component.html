@@ -2,7 +2,7 @@
 <div class="component">
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{title}}</span>
-        <span>&nbsp;<a routerLink="/product-list">Return to List</a></span>
+        <span>&nbsp;<a routerLink="/product-list">  Return to List</a></span>
     </section>
     <main class="single">
         <table *ngIf = 'product' class="table table-sm table-striped">
@@ -12,14 +12,12 @@
                     Vendor:
                 </td>
                 <td>
-                    <select [(ngModel)]="product.vendor" class="rounded">
-                      <option *ngFor='let vendor of vendors' [ngValue]='vendor'>{{vendor.name}}</option>
-                    </select>
+                    {{product.vendor.vendorName}}
                 </td>
               <tr> 
                 <td>Part Number:</td>             
             <td>
-                <input [(ngModel)]="product.partNumber" class="rounded" type="text">
+                {{product.partNumber}}
             </td>
           </tr>
           
@@ -28,7 +26,7 @@
                 Name:
             </td>
             <td>
-                <input [(ngModel)]="product.name" class="rounded" type="text">
+                {{product.name}}
             </td>
             </tr>   
           
@@ -37,7 +35,7 @@
               Price:
           </td>
           <td>
-              <input [(ngModel)]="product.price" class="rounded" type="text">
+              {{product.price}}
           </td>
           </tr>   
           
@@ -46,7 +44,7 @@
               Unit:
           </td>
           <td>
-              <input [(ngModel)]="product.unit" class="rounded" type="text">
+              {{product.price}}
           </td>
           </tr>   
           

@@ -21,6 +21,8 @@ import { ProductEditComponent } from './feature/product/product-edit/product-edi
 
 import { RequestListComponent } from './feature/request/request-list/request-list.component';
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
+import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
+import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'user-login', pathMatch: 'full' },
@@ -42,6 +44,8 @@ const routes: Routes = [
 
   { path: 'request-list', component: RequestListComponent},
   { path: 'request-create', component: RequestCreateComponent},
+  { path: 'request-edit/:id', component: RequestEditComponent},
+  { path: 'request-detail/:id', component: RequestDetailComponent},
 
   { path: '**', component: NoComponentDefinedComponent }
 ];
