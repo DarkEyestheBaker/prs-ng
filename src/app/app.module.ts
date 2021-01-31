@@ -29,34 +29,40 @@ import { RequestListComponent } from './feature/request/request-list/request-lis
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
-import { LineItemListComponent } from './feature/lineItem/lineItem-list/lineItem-list.component';
-import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
+//import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 
+import { LineItemAddComponent } from './feature/lineItem/lineItem-add/lineItem-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+ 
     UserListComponent,
     UserCreateComponent,
     UserDetailComponent,
     UserEditComponent,
     UserLoginComponent,
+ 
     MenuComponent,
     NoComponentDefinedComponent,
+ 
     VendorListComponent,
     VendorDetailComponent,
     VendorCreateComponent,
     VendorEditComponent,
+ 
     ProductListComponent,
     ProductCreateComponent,
     ProductEditComponent,
-    RequestListComponent,
     ProductDetailComponent,
+ 
+    RequestListComponent,
     RequestCreateComponent,
     RequestEditComponent,
     RequestDetailComponent,
-    LineItemListComponent,
-    RequestApproveComponent,
+      //RequestApproveComponent,
+      
+      LineItemAddComponent,
   
   ],
   imports: [

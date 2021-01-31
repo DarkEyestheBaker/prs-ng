@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<section class="heading">
+    <span class="page-title font-weight-bold font italic"> [{{title}}]</span>
+    <a routerLink='/lineItem-add'>
+        <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+    </a>
+</section>
+<main class="single">
+    <table *ngIf='lineItem' class="table table-sm table-striped">
+
+        <tr>
+            <td>ID</td>
+            <td>{{lineItem.id}}</td>
+        </tr>
+
+        <tr>
+            <td>Requestor</td>
+            <td>{{lineItem.request.id}}</td>
+        </tr>
+        <tr>
+            <td>Product</td>
+            <td>
+                <input [(ngModel)]="product.description" class="rounded" type="">
+
+            </td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>{{lineItem.product.quantity}}</td>
+        </tr>
+
+
+        <tr *ngFor='let lineItem of lineItems'>
+
+            <a routerLink='/lineItem-detail/{{lineItem.id}}'>
+                <img width='20' height='20' src='assets/details.png' title='lineItem Details'></a> |
+            <a routerLink='/lineItem-edit/{{lineItem.id}}'>
+                <img width='20' height='20' src='assets/pencil-icon.png' title='lineItem Edit'></a> |
+            <a routerLink='/lineItem-add/{{lineItem.id}}'>
+                <img width='20' height='20' src='assets/lines.png' title='lineItem Add'></a>
+        </tr>
+
+    </table>
+</main>
+<span>
+    <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
+</span> |
