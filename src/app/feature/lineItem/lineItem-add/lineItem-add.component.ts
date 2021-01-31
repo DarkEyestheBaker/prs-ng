@@ -6,6 +6,8 @@ import { LineItemService } from 'src/app/service/lineItem.service';
 import { Request } from 'src/app/model/request.class';
 import { RequestService } from 'src/app/service/request.service';
 import { UserService } from 'src/app/service/user.service';
+import { Product } from 'src/app/model/product.class';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-lineItem-add',
@@ -13,21 +15,43 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./lineItem-add.component.css']
 })
 export class LineItemAddComponent implements OnInit {
-  title = "LineItem List";
-  lineItems: LineItem[] = [];
+  title = "LineItem Create";
+  request: Request;
+  requestID: number;
+  products: Product[] = [];
+  lineItem: LineItem = new LineItem;
+  quantity: number;
+  submitBtnTitle = "Create";
 
-  constructor(private lineItemSvc: LineItemService, 
-              private requestSvc: RequestService,
-              private routerSvc: Router,
-              private route: ActivatedRoute,
-              private userSvc: UserService) { }
+  constructor(private lineItemSvc: LineItemService,
+    private requestSvc: RequestService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private productSvc: ProductService) { }
 
   ngOnInit(): void {
-    // get list of lineItems
-    this.lineItemSvc.getAll().subscribe(
+    // get request for ID
+    this.route.params.subscribe(
+      parms => {
+        this.requestID = parms['id'];
+        console.log("LineItem-create, request ID =", this.requestID);
+        this.requestSvc.getById(this.requestID).subscribe(
+          resp => {
+            this.request = resp as Request;
+            console.log('Request', this.request);
+          },
+          err => {
+            console.log(err);
+          }
+        );
+      }
+    );
+
+    //get list of Products for drop-down
+    this.productSvc.getAll().subscribe(
       resp => {
-        this.lineItems = resp as LineItem[];
-        console.log('LineItems', this.lineItems);
+        this.products = resp as Product[];
+        console.log('Products', this.products);
       },
       err => {
         console.log(err);
@@ -35,19 +59,19 @@ export class LineItemAddComponent implements OnInit {
     );
   }
 
-save() {
-  // save to lineItem to request DB
-  this.requestSvc.update(this.request).subscribe(
-    resp => {
-      this.request = resp as Request;
-      console.log('LineItem added.', this.request);
+  save() {
+    // save  lineItem to DB
+    this.lineItemSvc.create(this.lineItem).subscribe(
+      resp => {
+        this.lineItem = resp as LineItem;
+        console.log('LineItem added.', this.lineItem);
 
-      // forward to request-list component
-      this.router.navigateByUrl("/request-list");
-    },
-    err => {
-      console.log(err);
-    }
-  );
-}
+        // forward to request-lines component
+        this.router.navigateByUrl("/request-lines/{requestID}");
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 }

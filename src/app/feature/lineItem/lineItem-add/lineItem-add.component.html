@@ -20,25 +20,15 @@
         <tr>
             <td>Product</td>
             <td>
-                <input [(ngModel)]="product.description" class="rounded" type="">
+                <!-- <input [(ngModel)]="product.description" class="rounded" type=""> -->
 
             </td>
         </tr>
         <tr>
             <td>Quantity</td>
-            <td>{{lineItem.product.quantity}}</td>
+            <td>{{lineItem.quantity}}</td>
         </tr>
 
-
-        <tr *ngFor='let lineItem of lineItems'>
-
-            <a routerLink='/lineItem-detail/{{lineItem.id}}'>
-                <img width='20' height='20' src='assets/details.png' title='lineItem Details'></a> |
-            <a routerLink='/lineItem-edit/{{lineItem.id}}'>
-                <img width='20' height='20' src='assets/pencil-icon.png' title='lineItem Edit'></a> |
-            <a routerLink='/lineItem-add/{{lineItem.id}}'>
-                <img width='20' height='20' src='assets/lines.png' title='lineItem Add'></a>
-        </tr>
 
     </table>
 </main>

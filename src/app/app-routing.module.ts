@@ -26,6 +26,8 @@ import { RequestDetailComponent } from './feature/request/request-detail/request
 //import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 
 import { LineItemAddComponent } from './feature/lineItem/lineItem-add/lineItem-add.component';
+import { componentFactoryName } from '@angular/compiler';
+import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'user-login', pathMatch: 'full' },
@@ -50,6 +52,7 @@ const routes: Routes = [
   { path: 'request-edit/:id', component: RequestEditComponent},
   { path: 'request-detail/:id', component: RequestDetailComponent},
   //{ path: 'request-approve/', component: RequestApproveComponent},
+  { path: 'request-lines', component: RequestLinesComponent},
 
   { path: 'lineItem-add', component: LineItemAddComponent},
 

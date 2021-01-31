@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LineItem } from 'src/app/model/lineItem.class';
 
+const URL = 'http://localhost:8080/line-items';
+
 @Injectable({
   providedIn: 'root'
 })
