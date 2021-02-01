@@ -15,6 +15,7 @@ export class RequestLinesComponent implements OnInit {
   title = "Request Lines";
   request: Request;
   requestID: number;
+  lineItems: LineItem[] = [];
   submitBtnTitle: "Submit for Review";
 
   constructor(private requestSvc: RequestService,
@@ -23,12 +24,28 @@ export class RequestLinesComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    //get request-lines by ID
-    this.requestSvc.getById(this.requestID).subscribe;
-    resp => {
-      this.request = resp as Request;
-      console.log('Request', this.request);
-    }
+    //get ID from URL
+    this.route.params.subscribe(
+      parms => {
+        this.requestID = parms['id'];
+      }
+    );
+    //get request by ID
+    this.requestSvc.getById(this.requestID).subscribe(
+      resp => {
+        this.request = resp as Request;
+        console.log('Request', this.request);
+      }
+    );
+
+    //get lineItems by requestID
+    this.lineItemSvc.getAllByRequestID(this.requestID).subscribe(
+      resp => {
+        this.lineItems = resp as LineItem[];
+        if (this.lineItems.length === 0) {
+        }
+      }
+    );
   }
-  //forward to request-review component
 }
+

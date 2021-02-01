@@ -52,9 +52,9 @@ const routes: Routes = [
   { path: 'request-edit/:id', component: RequestEditComponent},
   { path: 'request-detail/:id', component: RequestDetailComponent},
   //{ path: 'request-approve/', component: RequestApproveComponent},
-  { path: 'request-lines', component: RequestLinesComponent},
+  { path: 'request-lines/:id', component: RequestLinesComponent},
 
-  { path: 'lineItem-add', component: LineItemAddComponent},
+  { path: 'lineItem-add/:id', component: LineItemAddComponent},
 
   { path: '**', component: NoComponentDefinedComponent }
 ];
