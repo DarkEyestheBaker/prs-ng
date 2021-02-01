@@ -23,11 +23,11 @@ import { RequestListComponent } from './feature/request/request-list/request-lis
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
+import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 //import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 
 import { LineItemAddComponent } from './feature/lineItem/lineItem-add/lineItem-add.component';
-import { componentFactoryName } from '@angular/compiler';
-import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
+import { LineItemEditComponent } from './feature/lineItem/line-item-edit/line-item-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'user-login', pathMatch: 'full' },
@@ -55,6 +55,7 @@ const routes: Routes = [
   { path: 'request-lines/:id', component: RequestLinesComponent},
 
   { path: 'lineItem-add/:id', component: LineItemAddComponent},
+  { path: 'line-item-edit/:id', component: LineItemEditComponent},
 
   { path: '**', component: NoComponentDefinedComponent }
 ];

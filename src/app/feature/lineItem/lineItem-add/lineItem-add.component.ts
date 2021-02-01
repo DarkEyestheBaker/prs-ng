@@ -34,7 +34,7 @@ export class LineItemAddComponent implements OnInit {
     this.route.params.subscribe(
       parms => {
         this.requestID = parms['id'];
-        console.log("LineItem-create, request ID =", this.requestID);
+        console.log("LineItem-add, request ID =", this.requestID);
         this.requestSvc.getById(this.requestID).subscribe(
           resp => {
             this.request = resp as Request;
@@ -46,7 +46,6 @@ export class LineItemAddComponent implements OnInit {
         );
       }
     );
-
     //get list of Products for drop-down
     this.productSvc.getAll().subscribe(
       resp => {
@@ -58,7 +57,6 @@ export class LineItemAddComponent implements OnInit {
       }
     );
   }
-
   save() {
     // save  lineItem to DB
     this.lineItemSvc.create(this.lineItem).subscribe(

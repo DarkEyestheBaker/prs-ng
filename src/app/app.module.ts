@@ -33,6 +33,7 @@ import { RequestLinesComponent } from './feature/request/request-lines/request-l
 //import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 
 import { LineItemAddComponent } from './feature/lineItem/lineItem-add/lineItem-add.component';
+import { LineItemEditComponent } from './feature/lineItem/line-item-edit/line-item-edit.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,7 @@ import { LineItemAddComponent } from './feature/lineItem/lineItem-add/lineItem-a
       //RequestApproveComponent,
       
       LineItemAddComponent,
-      RequestLinesComponent,
+      LineItemEditComponent,
   
   ],
   imports: [
