@@ -39,6 +39,7 @@ export class LineItemCreateComponent implements OnInit {
         this.requestSvc.getById(this.requestID).subscribe(
           resp => {
             this.request = resp as Request;
+            this.lineItem.request = this.request;
             console.log('Request', this.request);
           },
           err => {
@@ -60,13 +61,14 @@ export class LineItemCreateComponent implements OnInit {
   }
   save() {
     //save lineItem to DB
+    console.log("Line-item-create:", this.lineItem);
     this.lineItemSvc.create(this.lineItem).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
         console.log('Line item created.', this.lineItem);
 
         // forward to request-lines component
-        this.router.navigateByUrl("/request-lines/{requestID}");
+        this.router.navigateByUrl("/request-lines/"+ this.requestID);
       },
       err => {
         console.log(err);

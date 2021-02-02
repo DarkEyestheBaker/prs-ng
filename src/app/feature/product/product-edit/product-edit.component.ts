@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/model/product.class';
 import { ProductService } from 'src/app/service/product.service';
+import { Vendor } from 'src/app/model/vendor.class'
+import { VendorService } from 'src/app/service/vendor.service';
 
 @Component({
   selector: 'app-product-edit',
@@ -12,16 +14,22 @@ export class ProductEditComponent implements OnInit {
   title = "Product Edit";
   product: Product = null;
   productID: number = 0;
+  vendors: Vendor [] = [];
   submitBtnTitle = "Save";
 
   constructor(private productSrv: ProductService, 
+    private vendorSvc: VendorService,
               private router: Router, 
               private route: ActivatedRoute) {
-                
               }
 
   ngOnInit(): void {
-    
+   // Drop-down for Vendors
+   this.vendorSvc.getAll().subscribe(
+    resp => {
+      this.vendors = resp as Vendor[];
+  },
+   );
   // get the id from the URL
   this.route.params.subscribe(
     parms => {

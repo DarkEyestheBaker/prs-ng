@@ -1,7 +1,8 @@
+<app-menu></app-menu>
 <div class="component">
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{title}}</span>
-        <span>&nbsp;<a routerLink="/user-edit">Return to List</a></span>
+        <span>&nbsp;<a routerLink="/user-list"> Return to List</a></span>
     </section>
     <main *ngIf='user' class="single">
         <table class="table table-sm table-striped">
@@ -64,6 +65,6 @@
     </main>
     <span>
         <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
-    </span> |
+    </span> 
 
 </div>

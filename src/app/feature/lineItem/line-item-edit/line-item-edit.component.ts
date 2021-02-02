@@ -44,11 +44,11 @@ export class LineItemEditComponent implements OnInit {
   }
   delete() {
 
-    // save edit to DB
-    this.requestSvc.delete(this.request.id).subscribe(
+    // delete line item
+    this.lineItemSvc.delete(this.lineItem).subscribe(
       resp => {
-        this.request = resp as Request;
-        console.log('Request deleted', this.request);
+        this.lineItem = resp as LineItem;
+        console.log('Line item deleted.', this.request);
 
         // forward to request-list component
         this.router.navigateByUrl("/request-list")

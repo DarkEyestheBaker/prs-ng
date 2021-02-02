@@ -13,12 +13,13 @@ import { VendorService } from 'src/app/service/vendor.service';
 export class ProductCreateComponent implements OnInit {
   title = "Create Product";
   product: Product = new Product();
-  submitBtnTitle = "Create";
   vendors: Vendor[] = [];
+  submitBtnTitle = "Create";
 
   constructor(private productSvc: ProductService, 
               private vendorSvc: VendorService,
-              private router: Router) {}
+              private router: Router) {
+              }
     
   ngOnInit(): void {
     // Drop-down for Vendors

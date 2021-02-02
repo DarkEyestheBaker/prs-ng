@@ -16,7 +16,7 @@ export class RequestLinesComponent implements OnInit {
   request: Request;
   requestID: number;
   lineItems: LineItem[] = [];
-  submitBtnTitle: "Submit for Review";
+  submitBtnTitle = "Submit for Review";
 
   constructor(private requestSvc: RequestService,
     private lineItemSvc: LineItemService,

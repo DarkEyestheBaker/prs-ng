@@ -14,13 +14,13 @@
             </tr>
             <tr>
                 <td>
-                    Phone Number: 
-                    <td>{{request.user.phoneNumber}}</td>
+                    Phone Number:
+                <td>{{request.user.phoneNumber}}</td>
             </tr>
 
             <tr>
                 <td>
-                    Email: 
+                    Email:
                 </td>
                 <td>{{request.user.email}}</td>
             </tr>
@@ -32,9 +32,9 @@
                 </td>
             </tr>
 
-        <tr>
+            <tr>
                 <td>Delivery Method:</td>
-                
+
                 <select [(ngModel)]="request.deliveryMode">
                     <option value="Pick-up" selected="selected">Pick-up</option>
                     <option value="Via mail" selected="selected">Via mail</option>
@@ -47,7 +47,8 @@
                     Description:
                 </td>
                 <td>
-                    <input [(ngModel)]="request.description" type="text" id="description" placeholder="New employee supplies...">
+                    <input [(ngModel)]="request.description" type="text" id="description"
+                        placeholder="New employee supplies...">
                 </td>
                 <td>
 
@@ -58,15 +59,16 @@
                     Justification:
                 </td>
                 <td>
-                    <input [(ngModel)]="request.justification"type="textarea" id="justification" placeholder="Starts next week...">
+                    <input [(ngModel)]="request.justification" type="textarea" id="justification"
+                        placeholder="Starts next week...">
                 </td>
 
             </tr>
         </table>
-    
+
     </main>
     <span>
         <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
-    </span> 
+    </span>
 
     <!-- <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Cancel</button></span> -->

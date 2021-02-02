@@ -11,10 +11,10 @@
             Vendor:
         </td>
         <td>
-            <select [(ngModel)]="product.vendor" class="rounded" [compareWith]="compVendor">
-                <option *ngFor='let vendor of vendors' [ngValue]='vendor'>{{vendor.name}}</option>
-            </select>
-        </td>
+          <select [(ngModel)]="product.vendor" class="rounded">
+              <option *ngFor='let vendor of vendors' [ngValue]='vendor'>{{vendor.name}}</option>
+          </select>
+      </td>
       </tr>
       <tr>
         <td>
