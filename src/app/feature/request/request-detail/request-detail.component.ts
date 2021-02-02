@@ -12,6 +12,7 @@ export class RequestDetailComponent implements OnInit {
   title = "Request";
   request: Request = null;
   requestID: number = 0;
+  submitBtnTitle = "Delete Request";
 
 
 

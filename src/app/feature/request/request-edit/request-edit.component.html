@@ -2,7 +2,7 @@
 <div class="component">
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{title}}</span>
-        <span>&nbsp;<a routerLink="/request-list"> </a></span>
+        <span>&nbsp;<a routerLink="/request-list"> Return to List </a></span>
     </section>
     <main class="single">
         <table *ngIf='request' class="table table-sm table-striped">
@@ -67,6 +67,6 @@
     </main>
     <span>
         <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
-    </span> |
+    </span> 
 
     <!-- <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Cancel</button></span> -->

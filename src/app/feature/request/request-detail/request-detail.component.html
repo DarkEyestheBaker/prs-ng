@@ -2,7 +2,7 @@
 <div class="component">
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{title}}</span>
-        <span>&nbsp;<a routerLink="/request-list"> </a></span>
+        <span>&nbsp;<a routerLink="/request-list"> Return to List </a></span>
     </section>
     <main class="single">
         <table *ngIf='request' class="table table-sm table-striped">
@@ -40,9 +40,7 @@
                 <td>
                     Description:
                 </td>
-                <td>
-                    {{request.description}}
-                </td>
+                <td>{{request.description}}</td>
 
             </tr>
             <tr>
@@ -65,6 +63,6 @@
     </main>
     <span>
         <button (click)="delete()" class="btn btn-sm btn-primary">Delete</button>
-    </span> |
+    </span> 
 
     <!-- <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Cancel</button></span> -->

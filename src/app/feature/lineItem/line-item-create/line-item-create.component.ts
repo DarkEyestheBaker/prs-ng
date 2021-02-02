@@ -1,3 +1,4 @@
+
 import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -5,16 +6,16 @@ import { LineItem } from 'src/app/model/lineItem.class';
 import { LineItemService } from 'src/app/service/lineItem.service';
 import { Request } from 'src/app/model/request.class';
 import { RequestService } from 'src/app/service/request.service';
-import { UserService } from 'src/app/service/user.service';
+// import { UserService } from 'src/app/service/user.service';
 import { Product } from 'src/app/model/product.class';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
-  selector: 'app-lineItem-add',
-  templateUrl: './lineItem-add.component.html',
-  styleUrls: ['./lineItem-add.component.css']
+  selector: 'app-line-item-create',
+  templateUrl: './line-item-create.component.html',
+  styleUrls: ['./line-item-create.component.css']
 })
-export class LineItemAddComponent implements OnInit {
+export class LineItemCreateComponent implements OnInit {
   title = "LineItem Create";
   request: Request;
   requestID: number;
@@ -34,7 +35,7 @@ export class LineItemAddComponent implements OnInit {
     this.route.params.subscribe(
       parms => {
         this.requestID = parms['id'];
-        console.log("LineItem-add, request ID =", this.requestID);
+        console.log("Line-item-create, request ID =", this.requestID);
         this.requestSvc.getById(this.requestID).subscribe(
           resp => {
             this.request = resp as Request;
@@ -58,11 +59,11 @@ export class LineItemAddComponent implements OnInit {
     );
   }
   save() {
-    // save  lineItem to DB
+    //save lineItem to DB
     this.lineItemSvc.create(this.lineItem).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
-        console.log('LineItem added.', this.lineItem);
+        console.log('Line item created.', this.lineItem);
 
         // forward to request-lines component
         this.router.navigateByUrl("/request-lines/{requestID}");
