@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+<div class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span>&nbsp;<a routerLink="/request-list"> Return to List </a></span>
+        
+    </section>
+<main>
+    <table *ngIf='request' class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let request of requests'>
+                <td>{{requestID}}</td>
+                <td>{{request.user.lastName + ", " + request.user.firstName}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total | currency}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+    <section *ngIf='request' class="heading">
+        <span class="page-title font-weight-bold font italic"> [{{title}}]</span>
+        <a routerLink='/request-approve/{{request.id}}'>
+            <img width='20' height='20' src='assets/review.png' title='Approve'>
+        </a>
+        <!-- <a><input [(ngModel)]="request.reasonForRejection"type="textarea" id="rejection" placeholder="Reason for rejection..."></a> -->
+    </section>
+</main>
+<span>
+    <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
+</span>

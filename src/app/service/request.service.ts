@@ -15,7 +15,6 @@ export class RequestService {
   // service functions
   // get all requests
   getAll(): Observable<Request[]> {
-    console.log("requestSvc.getAll()..." + URL);
     return this.http.get(URL + '/') as Observable<Request[]>;
   }
   //create/add request
@@ -33,5 +32,8 @@ export class RequestService {
   //delete request by ID
   delete(id): Observable<Request> {
     return this.http.delete(URL + '/' + id) as Observable<Request>;
+  }
+  getRequestByUserAndStatus(id): Observable<Request[]> {
+    return this.http.get(URL + '/list-review/' + id) as Observable<Request[]>;
   }
 }

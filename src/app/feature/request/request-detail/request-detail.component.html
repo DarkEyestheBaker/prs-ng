@@ -8,22 +8,16 @@
     <main class="single">
         <table *ngIf='request' class="table table-sm table-striped">
             <tr>
-                <td>
-                    Request Name:
-                </td>
+                <td>Request Name:</td>
                 <td>{{request.user.lastName + ", " + request.user.firstName}}</td>
             </tr>
             <tr>
-                <td>
-                    Phone Number:
-                </td>
+                <td>Phone Number:</td>
                 <td>{{request.user.phoneNumber}}</td>
             </tr>
 
             <tr>
-                <td>
-                    Email:
-                </td>
+                <td>Email:</td>
                 <td>{{request.user.email}}</td>
             </tr>
 
@@ -38,24 +32,16 @@
             </tr>
 
             <tr>
-                <td>
-                    Description:
-                </td>
+                <td>Description:</td>
                 <td>{{request.description}}</td>
 
             </tr>
             <tr>
-                <td>
-                    Justification:
-                </td>
-                <td>
-                    {{request.justification}}
-                </td>
+                <td>Justification: </td>
+                <td>{{request.justification}}</td>
             </tr>
             <tr>
-                <td>
-                    Reason for Rejection:
-                </td>
+                <td>Reason for Rejection:</td>
                 <td>{{request.reasonForRejection}}</td>
             </tr>
 
