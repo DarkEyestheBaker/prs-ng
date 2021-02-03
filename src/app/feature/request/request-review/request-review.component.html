@@ -31,11 +31,7 @@
 
     <section *ngIf='request' class="heading">
         <span class="page-title font-weight-bold font italic"> [{{title}}]</span>
-        <a routerLink='/request-approve/{{request.id}}'>
-            <img width='20' height='20' src='assets/review.png' title='Approve'>
-        </a>
-        <!-- <a><input [(ngModel)]="request.reasonForRejection"type="textarea" id="rejection" placeholder="Reason for rejection..."></a> -->
-    </section>
+           </section>
 </main>
 <span>
     <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>

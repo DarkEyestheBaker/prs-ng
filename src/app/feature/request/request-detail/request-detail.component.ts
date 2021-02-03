@@ -40,7 +40,6 @@ export class RequestDetailComponent implements OnInit {
     );
   }
   delete() {
-
     // save edit to DB
     this.requestSvc.delete(this.request.id).subscribe(
       resp => {

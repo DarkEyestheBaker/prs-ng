@@ -58,7 +58,7 @@ export class RequestLinesComponent implements OnInit {
     this.requestSvc.create(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        console.log("Submitting for review.", this.request);
+        console.log("Submitted for review.", this.request);
 
         // forward to the request list component
         this.router.navigateByUrl("/request-list");
@@ -66,6 +66,23 @@ export class RequestLinesComponent implements OnInit {
       err => {
         console.log(err);
       }
+    );
+  }
+  delete() {
+
+    // save edit to DB
+    this.requestSvc.delete(this.request.id).subscribe(
+      resp => {
+        this.request = resp as Request;
+        console.log('Item deleted', this.request);
+
+        // forward to request-list component
+        this.router.navigateByUrl("/request-list")
+      },
+      err => {
+        console.log(err);
+      }
+
     );
   }
 }

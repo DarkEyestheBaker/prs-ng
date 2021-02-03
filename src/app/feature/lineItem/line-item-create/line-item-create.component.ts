@@ -22,7 +22,7 @@ export class LineItemCreateComponent implements OnInit {
   products: Product[] = [];
   lineItem: LineItem = new LineItem;
   quantity: number;
-  submitBtnTitle = "Create";
+  submitBtnTitle = "Add Item";
 
   constructor(private lineItemSvc: LineItemService,
     private requestSvc: RequestService,
@@ -61,11 +61,11 @@ export class LineItemCreateComponent implements OnInit {
   }
   save() {
     //save lineItem to DB
-    console.log("Line-item-create:", this.lineItem);
+              // console.log("Line-item-create:", this.lineItem);
     this.lineItemSvc.create(this.lineItem).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
-        console.log('Line item created.', this.lineItem);
+              // console.log('Line item created.', this.lineItem);
 
         // forward to request-lines component
         this.router.navigateByUrl("/request-lines/"+ this.requestID);
