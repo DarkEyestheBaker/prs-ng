@@ -55,7 +55,7 @@ const routes: Routes = [
   { path: 'request/submit-review', component: RequestReviewComponent},
   //{ path: 'request-approve/', component: RequestApproveComponent},
   { path: 'request-lines/:id', component: RequestLinesComponent},
-  { path: 'request-review/list-review/:id', component: RequestReviewComponent},
+  { path: 'request-review', component: RequestReviewComponent},
 
   { path: 'line-item-create/:id', component: LineItemCreateComponent},
   { path: 'line-item-edit/:id', component: LineItemEditComponent},
