@@ -32,7 +32,7 @@ export class LineItemEditComponent implements OnInit {
       }
     );
     // get request by ID
-    this.requestSvc.getById(this.requestID).subscribe(
+    this.requestSvc.getById(this.request.id).subscribe(
       resp => {
         this.request = resp as Request;
         console.log('Request', this.request);
@@ -42,23 +42,7 @@ export class LineItemEditComponent implements OnInit {
       }
     );
   }
-  delete() {
 
-    // delete line item
-    this.lineItemSvc.delete(this.lineItem).subscribe(
-      resp => {
-        this.lineItem = resp as LineItem;
-        console.log('Line item deleted.', this.request);
-
-        // forward to request-list component
-        this.router.navigateByUrl("/request-list")
-      },
-      err => {
-        console.log(err);
-      }
-
-    );
-  }
   save() {
     this.lineItemSvc.update(this.lineItem).subscribe(
       resp => {

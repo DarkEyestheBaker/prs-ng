@@ -6,6 +6,7 @@ import { LineItemService } from 'src/app/service/lineItem.service';
 import { Request } from 'src/app/model/request.class';
 import { RequestService } from 'src/app/service/request.service';
 import { SystemService } from 'src/app/service/system.service';
+import { LineItemEditComponent } from '../../lineItem/line-item-edit/line-item-edit.component';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class RequestLinesComponent implements OnInit {
   request: Request;
   requestID: number;
   lineItems: LineItem[] = [];
+  lineItem: LineItem = null;
   submitBtnTitle = "Submit for Review";
 
   constructor(private requestSvc: RequestService,
@@ -68,16 +70,17 @@ export class RequestLinesComponent implements OnInit {
       }
     );
   }
-  delete() {
 
-    // save edit to DB
-    this.requestSvc.delete(this.request.id).subscribe(
+  delete() {
+  
+    // delete line item
+    this.lineItemSvc.delete(this.lineItem.id).subscribe(
       resp => {
-        this.request = resp as Request;
-        console.log('Item deleted', this.request);
+        this.lineItem = resp as LineItem;
+        console.log('Line item deleted.', this.request);
 
         // forward to request-list component
-        this.router.navigateByUrl("/request-list")
+        this.router.navigateByUrl("/request-lines/{{id}}")
       },
       err => {
         console.log(err);

@@ -35,6 +35,7 @@ import { RequestReviewComponent } from './feature/request/request-review/request
 
 import { LineItemEditComponent } from './feature/lineItem/line-item-edit/line-item-edit.component';
 import { LineItemCreateComponent } from './feature/lineItem/line-item-create/line-item-create.component';
+import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { LineItemCreateComponent } from './feature/lineItem/line-item-create/lin
 
     LineItemEditComponent,
     LineItemCreateComponent,
+    RequestApproveComponent,
 
 
   ],

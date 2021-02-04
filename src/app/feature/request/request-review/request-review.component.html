@@ -3,6 +3,7 @@
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{title}}</span>
         <span>&nbsp;<a routerLink="/request-list"> Return to List </a></span>    
+        <br>
     </section>
 
     <table *ngIf='requests' class="table table-sm table-striped">
@@ -18,7 +19,7 @@
         </thead>
         <tbody>
             <tr *ngFor='let request of requests'>
-                <td>{{requestID}}</td>
+                <td>{{request.id}}</td>
                 <td>{{request.user.lastName + ", " + request.user.firstName}}</td>
                 <td>{{request.description}}</td>
                 <td>{{request.status}}</td>
