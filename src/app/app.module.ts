@@ -31,11 +31,9 @@ import { RequestEditComponent } from './feature/request/request-edit/request-edi
 import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 import { RequestReviewComponent } from './feature/request/request-review/request-review.component';
-//import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 
 import { LineItemEditComponent } from './feature/lineItem/line-item-edit/line-item-edit.component';
 import { LineItemCreateComponent } from './feature/lineItem/line-item-create/line-item-create.component';
-import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 
 @NgModule({
   declarations: [
@@ -66,11 +64,11 @@ import { RequestApproveComponent } from './feature/request/request-approve/reque
     RequestDetailComponent,
     RequestLinesComponent,
     RequestReviewComponent,
-    //RequestApproveComponent,
+    
 
     LineItemEditComponent,
     LineItemCreateComponent,
-    RequestApproveComponent,
+   
 
 
   ],

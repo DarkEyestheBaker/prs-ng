@@ -48,9 +48,9 @@
 
                 <td>
                     <a routerLink='/line-item-edit/{{lineItem.id}}'>
-                        <img width='20' height='20' src='assets/pencil-icon.png' title='lineItem Edit'></a> |
-                    <a routerLink='/request-lines/{{lineItem.id}}'>
-                        <img width='20' height='20' src='assets/delete.jpg' title='lineItem Details'></a>
+                        <img width='20' height='20' src='assets/pencil-icon.png' title='Edit line item'></a> |
+                    <a routerLink='/request-lines/{{request.id}}/{{lineItem.id}}'>
+                        <img width='20' height='20' src='assets/delete.jpg' title='Delete line item'></a>
                 </td>
             </tr>
 
@@ -58,5 +58,5 @@
     </table>
 </main>
 <span>
-    <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
+    <button (click)="submit()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
 </span>

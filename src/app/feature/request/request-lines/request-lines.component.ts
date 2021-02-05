@@ -20,6 +20,7 @@ export class RequestLinesComponent implements OnInit {
   requestID: number;
   lineItems: LineItem[] = [];
   lineItem: LineItem = null;
+  lineItemID: number;
   submitBtnTitle = "Submit for Review";
 
   constructor(private requestSvc: RequestService,
@@ -33,6 +34,10 @@ export class RequestLinesComponent implements OnInit {
     this.route.params.subscribe(
       parms => {
         this.requestID = parms['id'];
+        if(parms['id'] && parms['liid']){
+          this.lineItemID = parms['liid'];
+          this.delete(this.lineItemID);
+        }
       }
     );
     //get request by ID
@@ -52,7 +57,7 @@ export class RequestLinesComponent implements OnInit {
       }
     );
   }
-  save() {
+  submit() {
     // Set the request user to the current user
     this.request.user = this.sysSvc.loggedInUser;
 
@@ -71,16 +76,16 @@ export class RequestLinesComponent implements OnInit {
     );
   }
 
-  delete() {
-  
+  delete(liid: number) {
+ 
     // delete line item
-    this.lineItemSvc.delete(this.lineItem.id).subscribe(
+    this.lineItemSvc.delete(liid).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
         console.log('Line item deleted.', this.request);
 
         // forward to request-list component
-        this.router.navigateByUrl("/request-lines/{{id}}")
+        this.router.navigateByUrl("/request-lines/" + this.requestID)
       },
       err => {
         console.log(err);

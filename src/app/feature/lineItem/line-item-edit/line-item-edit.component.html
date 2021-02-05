@@ -1,16 +1,14 @@
 <app-menu></app-menu>
 <section class="heading">
-    <span class="page-title font-weight-bold font italic"> {{title }}</span>
+    <span class="page-title font-weight-bold font italic">{{title}}</span>
     <span>&nbsp;<a routerLink="/request-list"> Return to List</a></span>
-    <a routerLink='/line-item-create'>
-    </a>
 </section>
 <main class="single">
     <table *ngIf='lineItem' class="table table-sm table-striped">
 
         <tr>
             <td>ID</td>
-            <td>{{requestID}}</td>
+            <td>{{lineItemID}}</td>
         </tr>
 
         <tr>
