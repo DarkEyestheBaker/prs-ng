@@ -37,7 +37,7 @@
             Price:
         </td>
         <td>
-            <input [(ngModel)]="product.price" class="rounded" type="text">
+          <input [ngModel]="product.price | currency" (ngModelChange)="product.price=$event" class="rounded" type="text">
         </td>
       </tr>
       <tr>

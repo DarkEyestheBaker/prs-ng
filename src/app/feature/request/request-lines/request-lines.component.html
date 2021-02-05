@@ -53,6 +53,11 @@
                         <img width='20' height='20' src='assets/delete.jpg' title='Delete line item'></a>
                 </td>
             </tr>
+            <tr *ngIf='!lineItems || lineItems.length == 0'>
+                <td colspan="6" style="background-color: rgb(248, 136, 136);">
+                    No line items yet.  Please create a new one!
+                </td>
+            </tr>
 
         </tbody>
     </table>
