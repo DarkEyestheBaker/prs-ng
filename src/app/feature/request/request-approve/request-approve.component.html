@@ -18,14 +18,9 @@
             </tr>
         </tbody>
     </table>
-
     <section *ngIf='request' class="heading">
         <span class="page-title font-weight-bold font italic"> {{title }}</span>
-        <a routerLink='/line-item-create/{{request.id}}'>
-            <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
-        </a>
     </section>
-
     <table class="table table-sm table-striped">
         <thead>
             <tr>
@@ -47,21 +42,19 @@
                 <td>{{lineItem.quantity * lineItem.product.price | currency}}</td>
 
                 <td>
-                    <a routerLink='/line-item-edit/{{lineItem.id}}'>
-                        <img width='20' height='20' src='assets/pencil-icon.png' title='Edit line item'></a> |
-                    <a routerLink='/request-lines/{{request.id}}/{{lineItem.id}}'>
-                        <img width='20' height='20' src='assets/delete.jpg' title='Delete line item'></a>
-                </td>
-            </tr>
-            <tr *ngIf='!lineItems || lineItems.length == 0'>
-                <td colspan="6" style="background-color: #ffbcae;">
-                    No line items yet.  Please create a new one!
-                </td>
-            </tr>
+                    <a routerLink='/request-approve/{{request.id}}'>
+                        <img width='20' height='20' src='assets/review.png' title='Approve'>
+                    </a> -->
+                    <a><input [(ngModel)]="request.reasonForRejection" type="textarea" id="rejection"
+                            placeholder="Reason for rejection..."></a>
 
+                    <a routerLink='/request-detail/{{request.id}}'>
+                        <img width='20' height='20' src='assets/details.png' title='request Details'></a>
+                    <span>
+                        <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
+                    </span>
+                </td>
+            </tr>
         </tbody>
     </table>
 </main>
-<span>
-    <button (click)="submit()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
-</span>

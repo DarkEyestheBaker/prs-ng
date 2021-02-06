@@ -6,20 +6,20 @@ import { Request } from 'src/app/model/request.class';
 import { RequestService } from 'src/app/service/request.service';
 import { SystemService } from 'src/app/service/system.service';
 
-
 @Component({
-  selector: 'app-request-lines',
-  templateUrl: './request-lines.component.html',
-  styleUrls: ['./request-lines.component.css']
+  selector: 'app-request-approve',
+  templateUrl: './request-approve.component.html',
+  styleUrls: ['./request-approve.component.css']
 })
-export class RequestLinesComponent implements OnInit {
-  title = "Request Lines";
+export class RequestApproveComponent implements OnInit {
+  Title = "Request Approve";
   request: Request;
   requestID: number;
   lineItems: LineItem[] = [];
   lineItem: LineItem = null;
   lineItemID: number;
-  submitBtnTitle = "Submit for Review";
+  submitBtnTitle = "Approved";
+
 
   constructor(private requestSvc: RequestService,
     private sysSvc: SystemService,
@@ -32,9 +32,8 @@ export class RequestLinesComponent implements OnInit {
     this.route.params.subscribe(
       parms => {
         this.requestID = parms['id'];
-        if(parms['id'] && parms['liid']){
+        if (parms['id'] && parms['liid']) {
           this.lineItemID = parms['liid'];
-          this.delete(this.lineItemID);
         }
       }
     );
@@ -46,12 +45,10 @@ export class RequestLinesComponent implements OnInit {
       }
     );
 
-    //get lineItems by requestID
-    this.lineItemSvc.getAllByRequestID(this.requestID).subscribe(
+     //get lineItems by requestID
+     this.lineItemSvc.getAllByRequestID(this.requestID).subscribe(
       resp => {
         this.lineItems = resp as LineItem[];
-        if (this.lineItems.length === 0) {
-        }
       }
     );
   }
@@ -63,7 +60,7 @@ export class RequestLinesComponent implements OnInit {
     this.requestSvc.create(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        console.log("Submitted for review.", this.request);
+        console.log("Request approved.", this.request);
 
         // forward to the request list component
         this.router.navigateByUrl("/request-list");
@@ -73,23 +70,6 @@ export class RequestLinesComponent implements OnInit {
       }
     );
   }
-
-  delete(liid: number) {
- 
-    // delete line item
-    this.lineItemSvc.delete(liid).subscribe(
-      resp => {
-        this.lineItem = resp as LineItem;
-        console.log('Line item deleted.', this.request);
-
-        // forward to request-list component
-        this.router.navigateByUrl("/request-lines/" + this.requestID)
-      },
-      err => {
-        console.log(err);
-      }
-
-    );
-  }
 }
+
 
