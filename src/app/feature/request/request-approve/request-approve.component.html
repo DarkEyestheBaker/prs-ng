@@ -1,5 +1,11 @@
 <app-menu></app-menu>
-<main>
+<div class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span>&nbsp;<a routerLink="/request-list"> Return to List </a></span>
+        <br>
+    </section>
+
     <table *ngIf='request' class="table table-sm table-striped">
         <thead>
             <tr>
@@ -10,41 +16,30 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>{{requestID}}</td>
+            <tr *ngIf='request'>
+                <td>{{request.id}}</td>
                 <td>{{request.description}}</td>
                 <td>{{request.status}}</td>
                 <td>{{request.total | currency}}</td>
             </tr>
         </tbody>
-    </table>
-    <section *ngIf='request' class="heading">
-        <span class="page-title font-weight-bold font italic"> {{title }}</span>
-    </section>
-    <table class="table table-sm table-striped">
-        <thead>
+        <table>
             <tr>
-                <th>ID</th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Line Total</th>
-                <th>Action</th>
-            </tr>
-
-        </thead>
-        <tbody>
-            <tr *ngFor='let lineItem of lineItems'>
+                <td>ID</td>
                 <td>{{lineItem.id}}</td>
-                <td>{{lineItem.product.name}}</td>
+                <td>Product</td>
+                <td>{{lineItem.product}}</td>
+                <td>Quantity</td>
                 <td>{{lineItem.quantity}}</td>
-                <td>{{lineItem.product.price | currency}}</td>
+                <td>Price</td>
+                <td>{{lineItem.price}}</td>
+                <td>Total</td>
                 <td>{{lineItem.quantity * lineItem.product.price | currency}}</td>
 
                 <td>
                     <a routerLink='/request-approve/{{request.id}}'>
                         <img width='20' height='20' src='assets/review.png' title='Approve'>
-                    </a> -->
+                    </a>
                     <a><input [(ngModel)]="request.reasonForRejection" type="textarea" id="rejection"
                             placeholder="Reason for rejection..."></a>
 
@@ -55,6 +50,6 @@
                     </span>
                 </td>
             </tr>
-        </tbody>
+
+        </table>
     </table>
-</main>

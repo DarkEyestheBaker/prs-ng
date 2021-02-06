@@ -12,7 +12,7 @@ import { SystemService } from 'src/app/service/system.service';
   styleUrls: ['./request-approve.component.css']
 })
 export class RequestApproveComponent implements OnInit {
-  Title = "Request Approve";
+  title = "Request Approve";
   request: Request;
   requestID: number;
   lineItems: LineItem[] = [];
@@ -52,18 +52,18 @@ export class RequestApproveComponent implements OnInit {
       }
     );
   }
-  submit() {
+  approveRequest() {
     // Set the request user to the current user
     this.request.user = this.sysSvc.loggedInUser;
 
     // save the request to the database
-    this.requestSvc.create(this.request).subscribe(
+    this.requestSvc.approveRequest(this.request).subscribe(
       resp => {
         this.request = resp as Request;
         console.log("Request approved.", this.request);
 
-        // forward to the request list component
-        this.router.navigateByUrl("/request-list");
+        // forward to the request approve component
+        this.router.navigateByUrl("/approve");
       },
       err => {
         console.log(err);

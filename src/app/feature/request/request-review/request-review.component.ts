@@ -15,7 +15,7 @@ import { LineItemService } from 'src/app/service/lineItem.service';
 export class RequestReviewComponent implements OnInit {
   title = "Review Request";
   requests: Request[] = [];
-
+  
   constructor(private requestSvc: RequestService,
     private lineItemSvc: LineItemService,
     private route: ActivatedRoute,
@@ -28,10 +28,12 @@ export class RequestReviewComponent implements OnInit {
     this.requestSvc.getRequestByUserAndStatus(this.sysSvc.loggedInUser.id).subscribe(
       resp => {
         this.requests = resp as Request[];
+
       },
       err => {
         console.log(err);
       }
     );
   }
+  
 }

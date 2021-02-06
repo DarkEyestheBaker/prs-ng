@@ -60,7 +60,7 @@ export class RequestLinesComponent implements OnInit {
     this.request.user = this.sysSvc.loggedInUser;
 
     // save the request to the database
-    this.requestSvc.create(this.request).subscribe(
+    this.requestSvc.submitForReview(this.request).subscribe(
       resp => {
         this.request = resp as Request;
         console.log("Submitted for review.", this.request);
