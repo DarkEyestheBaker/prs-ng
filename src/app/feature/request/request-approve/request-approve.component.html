@@ -23,33 +23,35 @@
                 <td>{{request.total | currency}}</td>
             </tr>
         </tbody>
-        <table>
-            <tr>
-                <td>ID</td>
-                <td>{{lineItem.id}}</td>
-                <td>Product</td>
-                <td>{{lineItem.product}}</td>
-                <td>Quantity</td>
-                <td>{{lineItem.quantity}}</td>
-                <td>Price</td>
-                <td>{{lineItem.price}}</td>
-                <td>Total</td>
-                <td>{{lineItem.quantity * lineItem.product.price | currency}}</td>
+    </table>
+        <table class="table table-sm table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Line Total</th>
+                   
+                </tr>
+    
+            </thead>
+            <tbody>
+                <tr *ngFor='let lineItem of lineItems'>
+                    <td>{{lineItem.id}}</td>
+                    <td>{{lineItem.product.name}}</td>
+                    <td>{{lineItem.quantity}}</td>
+                    <td>{{lineItem.product.price | currency}}</td>
+                    <td>{{lineItem.quantity * lineItem.product.price | currency}}</td>
 
                 <td>
-                    <a routerLink='/request-approve/{{request.id}}'>
-                        <img width='20' height='20' src='assets/review.png' title='Approve'>
-                    </a>
-                    <a><input [(ngModel)]="request.reasonForRejection" type="textarea" id="rejection"
-                            placeholder="Reason for rejection..."></a>
-
-                    <a routerLink='/request-detail/{{request.id}}'>
-                        <img width='20' height='20' src='assets/details.png' title='request Details'></a>
-                    <span>
-                        <button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
-                    </span>
                 </td>
             </tr>
-
         </table>
-    </table>
+    <input *ngIf= "request" [(ngModel)]="request.reasonForRejection" type="textarea" id="rejection"
+            placeholder="Reason for rejection...">
+    <button *ngIf="request.reasonForRejection" (click)="rejectRequest()" class="btn btn-sm btn-danger">Reject Request</button>
+    <span>
+        <button (click)="approveRequest()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button>
+    </span>
+    

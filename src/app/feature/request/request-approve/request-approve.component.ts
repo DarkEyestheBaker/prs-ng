@@ -18,7 +18,7 @@ export class RequestApproveComponent implements OnInit {
   lineItems: LineItem[] = [];
   lineItem: LineItem = null;
   lineItemID: number;
-  submitBtnTitle = "Approved";
+  submitBtnTitle = "Approve";
 
 
   constructor(private requestSvc: RequestService,
@@ -53,9 +53,7 @@ export class RequestApproveComponent implements OnInit {
     );
   }
   approveRequest() {
-    // Set the request user to the current user
-    this.request.user = this.sysSvc.loggedInUser;
-
+    
     // save the request to the database
     this.requestSvc.approveRequest(this.request).subscribe(
       resp => {
@@ -63,7 +61,19 @@ export class RequestApproveComponent implements OnInit {
         console.log("Request approved.", this.request);
 
         // forward to the request approve component
-        this.router.navigateByUrl("/approve");
+        this.router.navigateByUrl("/request-review");
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+  rejectRequest() {
+    this.requestSvc.rejectRequest(this.request).subscribe(
+      resp => {
+        this.request = resp as Request;
+        console.log("Request rejected.", this.request);
+        this.router.navigateByUrl("request-review");
       },
       err => {
         console.log(err);

@@ -28,12 +28,11 @@ export class RequestReviewComponent implements OnInit {
     this.requestSvc.getRequestByUserAndStatus(this.sysSvc.loggedInUser.id).subscribe(
       resp => {
         this.requests = resp as Request[];
-
+        
       },
       err => {
         console.log(err);
-      }
+      },
     );
-  }
-  
+  }  
 }
