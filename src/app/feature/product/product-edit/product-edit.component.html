@@ -11,9 +11,7 @@
             Vendor:
         </td>
         <td>
-          <select [(ngModel)]="product.vendor" class="rounded">
-              <option *ngFor='let vendor of vendors' [ngValue]='vendor'>{{vendor.name}}</option>
-          </select>
+          <input [(ngModel)]="product.vendor.name" class="rounded" type="text">
       </td>
       </tr>
       <tr>
@@ -56,6 +54,7 @@
             <input [(ngModel)]="product.photoPath" class="rounded" type="text">
         </td>
       </tr>
+    
     </table>
   </main>
   <span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span>

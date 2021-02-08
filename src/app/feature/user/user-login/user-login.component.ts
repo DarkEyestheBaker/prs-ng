@@ -18,6 +18,7 @@ export class UserLoginComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    console.log("userLoginComponent");
   }
 
   login() {
@@ -36,7 +37,7 @@ export class UserLoginComponent implements OnInit {
       },
       err => {
         console.log("User login error!!!", err);
-        this.msg = "Error during login"
+        this.msg = "Error during login. Please try again."
       }
     );
   }

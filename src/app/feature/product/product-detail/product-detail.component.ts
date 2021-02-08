@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/model/product.class';
+import { Vendor } from 'src/app/model/vendor.class';
 import { ProductService } from 'src/app/service/product.service';
+import { VendorService } from 'src/app/service/vendor.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,13 +11,18 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  title = "Product";
+  title = "Product Details";
   product: Product = null;
   productID: number = 0;
+  vendors: Vendor [] = [];
+  vendor: Vendor = null;
+  vendorID: number = 0;
 
-  constructor(private productSvc: ProductService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+  constructor(private productSvc: ProductService, 
+    private vendorSvc: VendorService,
+              private router: Router, 
+              private route: ActivatedRoute) {
+              }
 
   ngOnInit(): void {
     // get the ID from the URL

@@ -15,6 +15,8 @@ export class ProductEditComponent implements OnInit {
   product: Product = null;
   productID: number = 0;
   vendors: Vendor [] = [];
+  vendor: Vendor = null;
+  vendorID: number = 0;
   submitBtnTitle = "Save";
 
   constructor(private productSrv: ProductService, 
@@ -29,6 +31,13 @@ export class ProductEditComponent implements OnInit {
     resp => {
       this.vendors = resp as Vendor[];
   },
+   );
+   // get the vendor id 
+   this.vendorSvc.getById(this.vendorID).subscribe(
+    resp => {
+      this.vendor = resp as Vendor;
+      console.log('Vendor', this.vendor);
+     }
    );
   // get the id from the URL
   this.route.params.subscribe(

@@ -5,55 +5,39 @@
         <span>&nbsp;<a routerLink="/product-list"> Return to List</a></span>
     </section>
     <main class="single">
-        <table *ngIf = 'product' class="table table-sm table-striped">
+        <table *ngIf='product' class="table table-sm table-striped">
             <tr>
-                <tr>ID</tr>
-                <td>
-                    Vendor:
-                </td>
-                <td>
-                    {{product.vendor.vendorName}}
-                </td>
-              <tr> 
-                <td>Part Number:</td>             
-            <td>
-                {{product.partNumber}}
-            </td>
-          </tr>
-          
-          <tr>
-            <td>
-                Name:
-            </td>
-            <td>
-                {{product.name}}
-            </td>
-            </tr>   
-          
-          <tr>
-          <td>
-              Price:
-          </td>
-          <td>
-              {{product.price | currency}}
-          </td>
-          </tr>   
-          
-          <tr>
-          <td>
-              Unit:
-          </td>
-          <td>
-              {{product.price | currency}}
-          </td>
-          </tr>   
-          
+            <tr>
+                <td>ID</td>
+                <td>{{product.id}}</td>
+            </tr>
+            <td>Vendor:</td>
+            <td>{{product.vendor.name}}</td>
+            <tr>
+                <td>Part Number:</td>
+                <td>{{product.partNumber}}</td>
+            </tr>
+
+            <tr>
+                <td>Name:</td>
+                <td>{{product.name}}</td>
+            </tr>
+
+            <tr>
+                <td>Price:</td>
+                <td>{{product.price | currency}}</td>
+            </tr>
+
+            <tr>
+                <td>Unit:</td>
+                <td>{{product.price | currency}}</td>
+            </tr>
+
         </table>
-          </main>
-          <span>
-              <button (click)="delete()" class="btn btn-sm btn-primary">Delete</button>
-            </span> 
-          <!--
+    </main>
+    <span>
+        <button (click)="delete()" class="btn btn-sm btn-primary">Delete</button>
+    </span>
+    <!--
           <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Back</button></span>
           -->
-          

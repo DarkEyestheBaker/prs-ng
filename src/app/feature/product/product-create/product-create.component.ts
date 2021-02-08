@@ -34,6 +34,7 @@ export class ProductCreateComponent implements OnInit {
   }
   save() {
     //save the product to the DB
+    console.log("Save product: ", this.product);
     this.productSvc.create(this.product).subscribe(
       resp => {
         this.product = resp as Product;

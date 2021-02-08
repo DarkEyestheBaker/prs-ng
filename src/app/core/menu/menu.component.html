@@ -4,5 +4,10 @@
         <li *ngFor= 'let item of menuItems' title= "{{item.tooltip}}">
             <a routerLink='{{item.href}}'> {{item.display}}</a>
         </li>
+        <li *ngIf='loggedInUser.reviewer'>
+            <a routerLink='/request-review'>Review
+            </a>
+        </li>
     </ul>
+            <!-- <div align="left">Welcome, {{user.firstName}}!</div>-->
 </nav>
