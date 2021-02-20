@@ -7,20 +7,26 @@
     <table *ngIf='lineItem' class="table table-sm table-striped">
 
         <tr>
-            <td>ID</td>
+            <td>ID:</td>
             <td>{{lineItemID}}</td>
         </tr>
-
         <tr>
-            <td>Product</td>
-            <select [(ngModel)]="lineItem.product" class="rounded"></select>
-                <option *ngFor='let product of products' [ngValue]='product'>{{product.name}} | {{product.vendor.name}}
-                </option>
-            </select>
+            <td>Vendor:</td>
+            <td>{{lineItem.product.vendor.name}}</td>
         </tr>
 
         <tr>
-            <td>Quantity</td>
+            <td>Product:</td>
+            <td>{{lineItem.product.name}}</td>
+           <!-- <input [(ngModel)]="lineItem.product.name" class="rounded"> -->
+
+            <!-- </select> -->
+                <!-- <option *ngFor='let product of products' [ngValue]='product'>{{product.name}} | {{product.vendor.name}}
+                </option> -->
+        </tr>
+       
+        <tr>
+            <td>Quantity:</td>
             <input [(ngModel)]="lineItem.quantity" class="rounded" type="number" min="0" maxlength="4">
         </tr>
     </table>

@@ -11,8 +11,8 @@
                 <td>ID</td>
                 <td>{{product.id}}</td>
             </tr>
-            <td>Vendor:</td>
-            <td>{{product.vendor.name}}</td>
+                <td>Vendor:</td>
+                <td>{{product.vendor.name}}</td>
             <tr>
                 <td>Part Number:</td>
                 <td>{{product.partNumber}}</td>
@@ -30,7 +30,7 @@
 
             <tr>
                 <td>Unit:</td>
-                <td>{{product.price | currency}}</td>
+                <td>{{product.unit}}</td>
             </tr>
 
         </table>
@@ -38,6 +38,3 @@
     <span>
         <button (click)="delete()" class="btn btn-sm btn-primary">Delete</button>
     </span>
-    <!--
-          <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Back</button></span>
-          -->

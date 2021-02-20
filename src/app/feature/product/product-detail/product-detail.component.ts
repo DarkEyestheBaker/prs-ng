@@ -14,15 +14,15 @@ export class ProductDetailComponent implements OnInit {
   title = "Product Details";
   product: Product = null;
   productID: number = 0;
-  vendors: Vendor [] = [];
+  vendors: Vendor[] = [];
   vendor: Vendor = null;
   vendorID: number = 0;
 
-  constructor(private productSvc: ProductService, 
+  constructor(private productSvc: ProductService,
     private vendorSvc: VendorService,
-              private router: Router, 
-              private route: ActivatedRoute) {
-              }
+    private router: Router,
+    private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     // get the ID from the URL
@@ -44,8 +44,7 @@ export class ProductDetailComponent implements OnInit {
     );
   }
   delete() {
-
-    // save edit to DB
+    // delete product 
     this.productSvc.delete(this.product.id).subscribe(
       resp => {
         this.product = resp as Product;

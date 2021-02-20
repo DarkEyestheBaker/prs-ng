@@ -14,7 +14,8 @@ export class UserLoginComponent implements OnInit {
   msg: string = '';
   user: User = new User;
 
-  constructor(private userSvc: UserService, private sysSvc: SystemService,
+  constructor(private userSvc: UserService, 
+    private sysSvc: SystemService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -32,12 +33,12 @@ export class UserLoginComponent implements OnInit {
           this.user = resp as User;
           console.log("Successful login!", this.user);
           this.sysSvc.loggedInUser = this.user;
-          this.router.navigateByUrl('/user-list');
+          this.router.navigateByUrl('/request-list');
         }
       },
       err => {
         console.log("User login error!!!", err);
-        this.msg = "Error during login. Please try again."
+        this.msg = "Error during login."
       }
     );
   }

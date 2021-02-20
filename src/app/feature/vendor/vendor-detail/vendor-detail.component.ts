@@ -20,8 +20,9 @@ export class VendorDetailComponent implements OnInit {
   ngOnInit(): void {
     // get the ID from the URL
     this.route.params.subscribe(
-      parms => {this.vendorID = parms['id'];
-    console.log(this.vendorID);
+      parms => {
+        this.vendorID = parms['id'];
+        console.log(this.vendorID);
   }
     );
 
@@ -37,20 +38,18 @@ export class VendorDetailComponent implements OnInit {
     );
   }
     delete() {
-      
       // save edit to DB
       this.vendorSvc.delete(this.vendor.id).subscribe(
         resp => {
           this.vendor = resp as Vendor;
           console.log('Vendor deleted', this.vendor);
-
+          
         // forward to vendor-list component
         this.router.navigateByUrl("/vendor-list")
         },
         err => {
           console.log(err);
         }
-
       );
     }
   }
